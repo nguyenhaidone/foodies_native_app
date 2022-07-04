@@ -13,13 +13,14 @@ import {
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import { ColorSchemeName, Pressable } from "react-native";
-
+import { navigationRef } from "./RootNavigation";
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
+import { WelcomeScreen } from "../screens/WelcomeScreen/WelcomeScreen";
 import {
   RootStackParamList,
   RootTabParamList,
@@ -36,6 +37,7 @@ export default function Navigation({
     <NavigationContainer
       linking={LinkingConfiguration}
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+      ref={navigationRef}
     >
       <RootNavigator />
     </NavigationContainer>
@@ -50,7 +52,12 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="Welcome">
+      <Stack.Screen
+        name="Welcome"
+        component={WelcomeScreen}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="Root"
         component={BottomTabNavigator}

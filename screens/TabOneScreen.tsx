@@ -1,7 +1,12 @@
+import React from "react";
 import { StyleSheet } from "react-native";
+import { Avatar } from "../components/atoms/avatar/Avatar";
+import { CustomButton } from "../components/atoms/CustomButton/CustomButton";
+import { CustomLabel } from "../components/atoms/CustomLabel/CustomLabel";
 
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
+import { orangeEC994B } from "../styles/constants";
 import { RootTabScreenProps } from "../types";
 
 export default function TabOneScreen({
@@ -9,13 +14,20 @@ export default function TabOneScreen({
 }: RootTabScreenProps<"TabOne">) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <CustomLabel
+        label="Dont wanna make you have a bad day"
+        fontWeight={600}
+        fontSize={26}
+        width={250}
+      />
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
       <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      <Avatar />
+      {/* <CustomButton title="Get started" backgroundColor={orangeEC994B} /> */}
     </View>
   );
 }
@@ -27,7 +39,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    fontSize: 20,
+    fontSize: 26,
     fontWeight: "bold",
   },
   separator: {
