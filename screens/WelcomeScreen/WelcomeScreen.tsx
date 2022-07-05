@@ -7,7 +7,6 @@ import * as RootNavigation from "../../navigation/RootNavigation";
 import * as S from "./styles";
 
 export const WelcomeScreen: React.FC = () => {
-  const navigationRef = useNavigationContainerRef();
   return (
     <S.Wrapper>
       <S.Box width={355}>
@@ -34,7 +33,7 @@ export const WelcomeScreen: React.FC = () => {
       <S.Box mt={32} pl={45} pr={45}>
         <CustomButton
           title="Get Started"
-          handleOnPress={() => RootNavigation.navigate("Root", {})}
+          handleOnPress={() => RootNavigation.navigate("Home", {})}
         ></CustomButton>
       </S.Box>
     </S.Wrapper>

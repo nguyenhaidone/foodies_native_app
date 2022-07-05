@@ -1,13 +1,13 @@
-import { View, Image } from "react-native";
-import { styled } from "../../styles/globleStyles";
+import { View } from "react-native";
+import { styled } from "../../../styles/globleStyles";
 
-export const Wrapper = styled(View)`
+export const WrapHeader = styled(View)`
   width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 0px;
+  padding: 0px 16px;
   box-sizing: border-box;
 `;
 
@@ -22,8 +22,9 @@ export const Box = styled(View)<{
   mr?: number;
   display?: string;
   width?: number;
-  height?: number;
-  justify?: string;
+  flexDirection?: string;
+  alignItems?: string;
+  justifyContent?: string;
 }>`
   padding-left: ${props => (props.pl ? props.pl : 0)}px;
   padding-right: ${props => (props.pr ? props.pr : 0)}px;
@@ -34,8 +35,11 @@ export const Box = styled(View)<{
   margin-top: ${props => (props.mt ? props.mt : 0)}px;
   margin-bottom: ${props => (props.mb ? props.mb : 0)}px;
   width: ${props => (props.width ? `${props.width}px` : "100%")};
-  height: ${props => (props.height ? `${props.height}px` : "auto")};
   display: ${props => (props.display ? props.display : "flex")};
-  justify-content: ${props => (props.justify ? props.justify : "center")}
+  flex-direction: ${props =>
+    props.flexDirection ? props.flexDirection : "column"};
   box-sizing: border-box;
+  align-items: ${props => (props.alignItems ? props.alignItems : "center")};
+  justify-content: ${props =>
+    props.justifyContent ? props.justifyContent : "left"};
 `;
