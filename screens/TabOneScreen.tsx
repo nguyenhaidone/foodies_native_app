@@ -9,9 +9,7 @@ import { Text, View } from "../components/Themed";
 import { orangeEC994B } from "../styles/constants";
 import { RootTabScreenProps } from "../types";
 
-export default function TabOneScreen({
-  navigation,
-}: RootTabScreenProps<"TabOne">) {
+export default function TabOneScreen({ navigation }: any) {
   return (
     <View style={styles.container}>
       <CustomLabel

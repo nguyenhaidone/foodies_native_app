@@ -1,12 +1,11 @@
-import { View, Image } from "react-native";
+import { ScrollView, View, Image } from "react-native";
 import { styled } from "../../styles/globleStyles";
 
-export const Wrapper = styled(View)`
+export const Wrapper = styled(ScrollView)`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 16px;
   box-sizing: border-box;
 `;
@@ -33,7 +32,7 @@ export const Box = styled(View)<{
   margin-right: ${props => (props.mr ? props.mr : 0)}px;
   margin-top: ${props => (props.mt ? props.mt : 0)}px;
   margin-bottom: ${props => (props.mb ? props.mb : 0)}px;
-  width: ${props => (props.width ? `${props.width}px` : "100%")};
+  width: ${props => (props.width ? `${props.width}%` : "100%")};
   height: ${props => (props.height ? `${props.height}px` : "auto")};
   display: ${props => (props.display ? props.display : "flex")};
   justify-content: ${props => (props.justify ? props.justify : "center")}

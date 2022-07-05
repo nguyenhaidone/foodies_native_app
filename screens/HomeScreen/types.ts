@@ -10,5 +10,6 @@ export interface IFoodPopular {
   picUrl?: string;
   subscription?: string;
   price?: string;
+  name?: string;
   onAddClick?: () => void;
 }

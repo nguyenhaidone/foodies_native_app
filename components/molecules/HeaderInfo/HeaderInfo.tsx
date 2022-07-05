@@ -12,7 +12,7 @@ export const HeaderInfo: React.FC<IHeaderInfoProps> = () => {
     <S.WrapHeader>
       <S.Box flexDirection="row">
         <Avatar />
-        <S.Box width={240} ml={8}>
+        <S.Box width={50} ml={8}>
           <CustomLabel
             label="Deliver to"
             fontSize={12}
@@ -27,10 +27,10 @@ export const HeaderInfo: React.FC<IHeaderInfoProps> = () => {
           />
         </S.Box>
         <S.Box flexDirection="row" width={150} ml={8}>
-          <S.Box width={20} mr={20}>
+          <S.Box width={10} mr={20} justifyContent="flex-end">
             <BellSvgComponent />
           </S.Box>
-          <S.Box width={20}>
+          <S.Box width={10}>
             <MenuSvgComponent />
           </S.Box>
         </S.Box>

@@ -13,6 +13,7 @@ export const CustomLabel: React.FC<ICustomLabel> = ({
   textAlign,
   padding,
   width,
+  onPress,
 }) => {
   return (
     <S.WrapLabel
@@ -24,6 +25,7 @@ export const CustomLabel: React.FC<ICustomLabel> = ({
       textAlign={textAlign}
       padding={padding}
       width={width}
+      onPress={onPress}
     >
       {label}
     </S.WrapLabel>

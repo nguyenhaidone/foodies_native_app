@@ -14,7 +14,7 @@ export const WelcomeScreen: React.FC = () => {
           source={require("../../assets/images/welcome-screen.png")}
         ></S.WrapImage>
       </S.Box>
-      <S.Box mt={32} pl={40} pr={40}>
+      <S.Box mt={8} pl={40} pr={40}>
         <CustomLabel
           label="Dont wanna make you have a bad day"
           fontSize={26}
@@ -33,7 +33,7 @@ export const WelcomeScreen: React.FC = () => {
       <S.Box mt={32} pl={45} pr={45}>
         <CustomButton
           title="Get Started"
-          handleOnPress={() => RootNavigation.navigate("Home", {})}
+          handleOnPress={() => RootNavigation.navigate("Root", {})}
         ></CustomButton>
       </S.Box>
     </S.Wrapper>

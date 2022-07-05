@@ -7,7 +7,7 @@ export const WrapHeader = styled(View)`
   flex-direction: row;
   justify-content: space-between;
   margin: 20px 0px;
-  padding: 0px 16px;
+  padding: 0px 10px;
   box-sizing: border-box;
 `;
 
@@ -34,7 +34,7 @@ export const Box = styled(View)<{
   margin-right: ${props => (props.mr ? props.mr : 0)}px;
   margin-top: ${props => (props.mt ? props.mt : 0)}px;
   margin-bottom: ${props => (props.mb ? props.mb : 0)}px;
-  width: ${props => (props.width ? `${props.width}px` : "100%")};
+  width: ${props => (props.width ? `${props.width}%` : "100%")};
   display: ${props => (props.display ? props.display : "flex")};
   flex-direction: ${props =>
     props.flexDirection ? props.flexDirection : "column"};

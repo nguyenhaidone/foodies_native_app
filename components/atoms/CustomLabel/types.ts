@@ -8,4 +8,5 @@ export interface ICustomLabel {
   width?: number;
   color?: string;
   textAlign?: string;
+  onPress?: () => void;
 }
