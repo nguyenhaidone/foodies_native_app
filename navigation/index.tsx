@@ -28,6 +28,10 @@ import {
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { HomeScreen } from "../screens/HomeScreen/HomeScreen";
+import HomeSvgComponent from "../components/atoms/icon/HomeIcon";
+import HeartSvgComponent from "../components/atoms/icon/HeartIcon";
+import SearchSvgComponent from "../components/atoms/icon/SearhIcon";
+import UserSvgComponent from "../components/atoms/icon/UserIcon";
 
 export default function Navigation({
   colorScheme,
@@ -92,42 +96,56 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}
     >
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<"TabOne">) => ({
-          title: "Tab One",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate("Modal")}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}
-            >
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
+        name="Home"
+        component={HomeScreen}
+        options={({ navigation }: RootTabScreenProps<"Home">) => ({
+          headerShown: false,
+          tabBarIcon: () => <HomeSvgComponent />,
+          tabBarShowLabel: false,
         })}
       />
       <BottomTab.Screen
+        name="Search"
+        component={HomeScreen}
+        options={({ navigation }: RootTabScreenProps<"Search">) => ({
+          headerShown: false,
+          tabBarIcon: () => <SearchSvgComponent />,
+          tabBarShowLabel: false,
+        })}
+      />
+      <BottomTab.Screen
+        name="Favorite"
+        component={HomeScreen}
+        options={({ navigation }: RootTabScreenProps<"Favorite">) => ({
+          headerShown: false,
+          tabBarIcon: () => <HeartSvgComponent />,
+          tabBarShowLabel: false,
+        })}
+      />
+      <BottomTab.Screen
+        name="User"
+        component={HomeScreen}
+        options={({ navigation }: RootTabScreenProps<"User">) => ({
+          headerShown: false,
+          tabBarIcon: () => <UserSvgComponent />,
+          tabBarShowLabel: false,
+        })}
+      />
+      {/* <BottomTab.Screen
         name="TabTwo"
         component={TabTwoScreen}
         options={{
           title: "Tab Two",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarShowLabel: false,
         }}
-      />
+      /> */}
     </BottomTab.Navigator>
   );
 }
