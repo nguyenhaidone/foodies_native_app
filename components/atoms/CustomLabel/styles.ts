@@ -1,6 +1,6 @@
 import { styled } from "../../../styles/globleStyles";
 import { Text } from "react-native";
-import { basedFontFamily, black46474B } from "../../../styles/constants";
+import { black46474B } from "../../../styles/constants";
 
 export const WrapLabel = styled(Text)<{
   fontSize?: number;
@@ -18,6 +18,5 @@ export const WrapLabel = styled(Text)<{
   width: ${props => (props.width ? `${props.width}px` : "100%")};
   font-size: ${props => (props.fontSize ? props.fontSize : 20)}px;
   font-weight: ${props => (props.fontWeight ? props.fontWeight : 400)};
-  line-height: ${props => (props.lineHeight ? props.lineHeight : 0)}px;
   color: ${props => (props.color ? props.color : black46474B)};
 `;

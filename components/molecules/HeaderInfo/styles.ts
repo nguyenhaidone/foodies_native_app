@@ -41,5 +41,5 @@ export const Box = styled(View)<{
   box-sizing: border-box;
   align-items: ${props => (props.alignItems ? props.alignItems : "center")};
   justify-content: ${props =>
-    props.justifyContent ? props.justifyContent : "left"};
+    props.justifyContent ? props.justifyContent : "flex-start"};
 `;

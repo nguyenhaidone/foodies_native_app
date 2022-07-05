@@ -12,7 +12,7 @@ export const HomeScreen: React.FC = () => {
       <S.Box>
         <HeaderInfo />
       </S.Box>
-      <S.Box justify="left">
+      <S.Box justify="flex-start">
         <S.Box width={266} mt={8} mb={25} pl={16}>
           <CustomLabel
             textAlign="left"
