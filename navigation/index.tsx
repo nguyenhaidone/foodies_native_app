@@ -27,6 +27,7 @@ import {
   RootTabScreenProps,
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
+import { HomeScreen } from "../screens/HomeScreen/HomeScreen";
 
 export default function Navigation({
   colorScheme,
@@ -57,6 +58,11 @@ function RootNavigator() {
         name="Welcome"
         component={WelcomeScreen}
         options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ headerShown: true }}
       />
       <Stack.Screen
         name="Root"
